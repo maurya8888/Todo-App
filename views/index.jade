@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container
+    .row.top-row
+      .col
+        form(method="post") 
+          input#todo.input-group(type='text', name='task', placeholder='What do you want to do today?', autocomplete='off')
+    .row.bottom-row
+      each task in Tasks
+        .col-12.todo-item-container
+          form.update-form(action="/update/#{ task.uuid }", method="post") 
+            input.todo-items(type="checkbox", id="#{ 'todo-item-' + task.id }", name="isComplete", onChange="this.form.submit()", checked=(task.isComplete == true))
+            label.todo-items-label(for="todo-item") #{task.name}
+          form.delete-form(action="/delete", method="post")
+            input(type="hidden", name="uuid", value="#{ task.uuid }")
+            button.btn.btn-danger.todo-delete(type="submit")
+              i.bi.bi-trash-fill
+      else
+        .col-12.todo-item-container.
+          There are no tasks!
+          
+</button>

@@ -1,0 +1,59 @@
+body {
+  padding-top: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+input#todo {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: left;
+  font-size: 40px;
+  line-height: 48px;
+  height: 64px;
+}
+
+input#todo:focus {   
+  border-color: #888888;
+  box-shadow: 0 8px 6px -6px #888888;
+  outline: 0 none;
+}
+
+.bottom-row {
+  padding-top: 100px;
+}
+
+.todo-item-container {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.todo-items {
+  transform: scale(2);
+  vertical-align: middle;
+}
+
+input[type=checkbox]:checked + label{
+  text-decoration: line-through;
+}
+
+.todo-items-label {
+  margin: 0 0 0 50px;
+  vertical-align: middle;
+}
+
+.update-form {
+  display: inline;
+}
+
+.delete-form {
+  position: absolute;
+  display: inline;
+  right: 0;
+}
+
+.todo-delete {
+  padding: 4px;
+  float: right;
+  margin-top: 11px;
+}
